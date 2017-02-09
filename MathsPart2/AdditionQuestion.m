@@ -11,35 +11,40 @@
 
 @implementation AdditionQuestion
 
+
 - (instancetype)init {
     
     if (self = [super init]) {
-        
-        // Set the start time with current date
-        _startTime = [NSDate date];
-        
+
         // Generate 2 random numbers between 10 and 100
-        int firstRandomNumber = arc4random_uniform(90) + 10;
-        int secondRandomNumber = arc4random_uniform(90) + 10;
-        
-        // Convert an integer to NSString
-        NSString* firstNumberWithString = [NSString stringWithFormat:@"%d",firstRandomNumber];
-        NSString* secondNumberWithString = [NSString stringWithFormat:@"%d",secondRandomNumber];
-        
-        // Store first and second number in an array to display the question to the user
-        NSArray *myStrings = [[NSArray alloc] initWithObjects:firstNumberWithString, secondNumberWithString, nil];
-        
-        // Add the '+' sign to the part of the question
-        NSString *question = [myStrings componentsJoinedByString:@" + "];
-        
-        
-        NSLog(@"%@ ?",question);
+        _firstRandomNumber = arc4random_uniform(90) + 10;
+        _secondRandomNumber = arc4random_uniform(90) + 10;
         
         // Adding the 2 random numbers to get the answer
-        _answer = firstRandomNumber + secondRandomNumber;
-        
+        _answer = _firstRandomNumber + _secondRandomNumber;
     }
     return self;
+}
+
+
+- (NSString *) generateQuestion {
+    // Set the start time with current date
+    _startTime = [NSDate date];
+    
+    // Convert an integer to NSString
+    NSString* firstNumberWithString = [NSString stringWithFormat:@"%ld", (long)_firstRandomNumber];
+    NSString* secondNumberWithString = [NSString stringWithFormat:@"%ld", (long)_secondRandomNumber];
+    
+    // Store first and second number in an array to display the question to the user
+    NSArray *myStrings = [[NSArray alloc] initWithObjects:firstNumberWithString, secondNumberWithString, nil];
+    
+    // Add the '+' sign to the part of the question
+    NSString *question = [myStrings componentsJoinedByString:@" + "];
+    
+    
+    NSLog(@"%@ ?",question);
+    
+    return question;
 }
 
 - (NSInteger) answer {
@@ -48,4 +53,14 @@
     return _answer;
 }
 
+
+- (NSTimeInterval) answerTime {
+
+    NSDate* date1 = _startTime;
+    NSDate* date2 = _endTime;
+    NSTimeInterval answerTime = [date2 timeIntervalSinceDate:date1];
+
+
+    return answerTime;
+}
 @end

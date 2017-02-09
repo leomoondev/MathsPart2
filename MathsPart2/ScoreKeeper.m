@@ -12,7 +12,6 @@
 
 - (void) countRight {
     _right = _right + 1;
-    
 }
 
 - (void) countWrong {

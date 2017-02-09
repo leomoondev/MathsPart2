@@ -11,6 +11,8 @@
 		DA357C7C1E4B974600FC454F /* AdditionQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = DA357C7B1E4B974600FC454F /* AdditionQuestion.m */; };
 		DA357C7F1E4B975300FC454F /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DA357C7E1E4B975300FC454F /* InputHandler.m */; };
 		DA357C821E4B977300FC454F /* ScoreKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = DA357C811E4B977300FC454F /* ScoreKeeper.m */; };
+		DA357C851E4BA3F000FC454F /* QuestionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA357C841E4BA3F000FC454F /* QuestionManager.m */; };
+		DA357C8B1E4C118200FC454F /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = DA357C8A1E4C118200FC454F /* Question.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +36,10 @@
 		DA357C7E1E4B975300FC454F /* InputHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
 		DA357C801E4B977300FC454F /* ScoreKeeper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreKeeper.h; sourceTree = "<group>"; };
 		DA357C811E4B977300FC454F /* ScoreKeeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreKeeper.m; sourceTree = "<group>"; };
+		DA357C831E4BA3F000FC454F /* QuestionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionManager.h; sourceTree = "<group>"; };
+		DA357C841E4BA3F000FC454F /* QuestionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionManager.m; sourceTree = "<group>"; };
+		DA357C891E4C118200FC454F /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		DA357C8A1E4C118200FC454F /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,10 @@
 				DA357C7E1E4B975300FC454F /* InputHandler.m */,
 				DA357C801E4B977300FC454F /* ScoreKeeper.h */,
 				DA357C811E4B977300FC454F /* ScoreKeeper.m */,
+				DA357C831E4BA3F000FC454F /* QuestionManager.h */,
+				DA357C841E4BA3F000FC454F /* QuestionManager.m */,
+				DA357C891E4C118200FC454F /* Question.h */,
+				DA357C8A1E4C118200FC454F /* Question.m */,
 			);
 			path = MathsPart2;
 			sourceTree = "<group>";
@@ -135,8 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA357C851E4BA3F000FC454F /* QuestionManager.m in Sources */,
 				DA357C821E4B977300FC454F /* ScoreKeeper.m in Sources */,
 				DA357C741E4B967700FC454F /* main.m in Sources */,
+				DA357C8B1E4C118200FC454F /* Question.m in Sources */,
 				DA357C7F1E4B975300FC454F /* InputHandler.m in Sources */,
 				DA357C7C1E4B974600FC454F /* AdditionQuestion.m in Sources */,
 			);
@@ -267,6 +279,7 @@
 				DA357C791E4B967700FC454F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
