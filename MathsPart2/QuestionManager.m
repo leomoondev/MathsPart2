@@ -7,17 +7,15 @@
 //
 
 #import "QuestionManager.h"
-#import "AdditionQuestion.h"
+#import "Question.h"
 
 @implementation QuestionManager
-
-
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        // _questions = [NSMutableArray new];
+
         _questions = [[NSMutableArray alloc] init];
     }
     return self;
@@ -29,14 +27,14 @@
     
     for (int i = 0; i < _questions.count; i++) {
         
-        AdditionQuestion *additionQuestion = [_questions objectAtIndex:i];
+        Question *aQuestion = [_questions objectAtIndex:i];
         
-        totalTime = totalTime + additionQuestion.answerTime;
+        totalTime = totalTime + aQuestion.answerTime;
     }
     
     NSTimeInterval averageTime = totalTime / self.questions.count;
     
-    NSString *timeOutput = [NSString stringWithFormat: @"Total time: %.2f s, average time: %.2f s", totalTime, averageTime];
+    NSString *timeOutput = [NSString stringWithFormat: @"Total time: %.2fs, average time: %.2fs", totalTime, averageTime];
     
     return timeOutput;
 }

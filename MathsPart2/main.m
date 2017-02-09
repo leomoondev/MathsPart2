@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AdditionQuestion.h"
+#import "Question.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
 #import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,16 +22,17 @@ int main(int argc, const char * argv[]) {
         
         printf("Maths!\n\n");
         
-        // BOOL gameOn = YES;
+        BOOL gameOn = YES;
         ScoreKeeper *scoreKeeper = [[ScoreKeeper alloc] init];
         QuestionManager *questionManager = [[QuestionManager alloc] init];
-    
-        while(1) {
+        QuestionFactory *questionFactory = [[QuestionFactory alloc] init];
+        
+        while(gameOn) {
             
-            AdditionQuestion *additionQuestion = [[AdditionQuestion alloc] init];
-            [additionQuestion generateQuestion];
-            
-            [questionManager.questions addObject:additionQuestion];
+            Question *aQuestion = [[Question alloc] init];
+            [questionManager.questions addObject:aQuestion];
+            aQuestion = [questionFactory generateRandomQuestion];
+
             InputHandler *inputHandler = [[InputHandler alloc] init];
             NSString *outputString = [inputHandler handleInput];
             NSInteger answerString = [outputString integerValue];
@@ -40,7 +42,7 @@ int main(int argc, const char * argv[]) {
                 break;
             }
             
-            if(additionQuestion.answer == answerString) {
+            if(aQuestion.answer == answerString) {
                 printf("Right!\n");
                 [scoreKeeper countRight];
                 [scoreKeeper printOutput];
@@ -53,9 +55,7 @@ int main(int argc, const char * argv[]) {
                 [scoreKeeper printOutput];
                 NSLog(@"%@", [questionManager timeOutput]);
             }
-            
         }
-        
     }
     return 0;
 }
