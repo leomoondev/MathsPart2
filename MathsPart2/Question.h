@@ -12,8 +12,6 @@
 
 - (instancetype) init;
 
-- (NSInteger) answer;
-
 - (NSTimeInterval) answerTime;
 - (void) generateQuestion;
 

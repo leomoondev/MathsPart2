@@ -1,6 +1,6 @@
-//
 //  main.m
 //  MathsPart2
+//
 //
 //  Created by Hyung Jip Moon on 2017-02-07.
 //  Copyright © 2017 leomoon. All rights reserved.
@@ -30,13 +30,14 @@ int main(int argc, const char * argv[]) {
         while(gameOn) {
             
             Question *aQuestion = [[Question alloc] init];
-            [questionManager.questions addObject:aQuestion];
             aQuestion = [questionFactory generateRandomQuestion];
 
             InputHandler *inputHandler = [[InputHandler alloc] init];
             NSString *outputString = [inputHandler handleInput];
             NSInteger answerString = [outputString integerValue];
         
+            [questionManager.questions addObject:aQuestion];
+            
             if ([outputString isEqualToString:@"quit"]) {
                 NSLog(@"%@", [questionManager timeOutput]);
                 break;
