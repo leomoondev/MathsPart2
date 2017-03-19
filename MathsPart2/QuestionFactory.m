@@ -11,13 +11,16 @@
 @implementation QuestionFactory 
 
 - (instancetype)init {
+    
     if (self = [super init]) {
+        
         _questionSubclassNames = @[@"AdditionQuestion", @"SubtractionQuestion", @"MultiplicationQuestion", @"DivisionQuestion"];
     }
     return self;
 }
 
 - (Question *)generateRandomQuestion {
+    
     NSString *className = [_questionSubclassNames objectAtIndex:arc4random_uniform(4)];
     
     return [[NSClassFromString(className) alloc]init];;

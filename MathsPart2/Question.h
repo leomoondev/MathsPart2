@@ -13,7 +13,6 @@
 - (instancetype) init;
 
 - (NSTimeInterval) answerTime;
-- (void) generateQuestion;
 
 @property (nonatomic, retain) NSString* question;
 @property (nonatomic, assign) NSInteger answer;

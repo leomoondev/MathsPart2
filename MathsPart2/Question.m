@@ -25,7 +25,6 @@
         _rightValue = _secondRandomNumber;
         
         _startTime = [NSDate date];
-
     }
     return self;
 }
@@ -33,6 +32,7 @@
 - (NSInteger) answer {
     
     _endTime = [NSDate date];
+    
     return _answer;
 }
 
@@ -40,13 +40,8 @@
 - (NSTimeInterval) answerTime {
 
     NSTimeInterval answerTime = [_endTime timeIntervalSinceDate:_startTime];
-
-
+    
     return answerTime;
 }
 
-- (void) generateQuestion {
-    
-    
-}
 @end

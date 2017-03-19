@@ -23,6 +23,7 @@ int main(int argc, const char * argv[]) {
         printf("Maths!\n\n");
         
         BOOL gameOn = YES;
+        
         ScoreKeeper *scoreKeeper = [[ScoreKeeper alloc] init];
         QuestionManager *questionManager = [[QuestionManager alloc] init];
         QuestionFactory *questionFactory = [[QuestionFactory alloc] init];
